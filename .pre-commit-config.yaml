@@ -1,0 +1,9 @@
+repos:
+-   repo: local
+    hooks:
+      - id: update-requirements
+        name: Update requirements.txt
+        entry: bash -c '.venv/Scripts/pip freeze > requirements.txt && git add requirements.txt'
+        language: system
+        pass_filenames: false
+        stages: [pre-commit]
